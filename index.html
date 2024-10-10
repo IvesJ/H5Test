@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Video</title>
+</head>
+
+<body>
+    <!-- 视频播放器 -->
+    <video id="videoPlayer" controls width="100%" height="auto"></video>
+
+    <script>
+        // 设置视频源
+        function setVideoSrc(videoUri) {
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = videoUri;  // 设置从 Android 传递过来的 URI
+            videoPlayer.load();  // 加载视频
+        }
+    </script>
+</body>
+
+</html>
