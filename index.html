@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Video</title>
-</head>
-
-<body>
-    <!-- 视频播放器 -->
-    <video id="videoPlayer" controls width="100%" height="auto"></video>
-
-    <script>
-        // 设置视频源
-        function setVideoSrc(videoUri) {
-            const videoPlayer = document.getElementById('videoPlayer');
-            videoPlayer.src = videoUri;  // 设置从 Android 传递过来的 URI
-            videoPlayer.load();  // 加载视频
+    <title>Fullscreen Video</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    </script>
-</body>
 
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* 保持视频比例，并填满布局 */
+        }
+    </style>
+</head>
+<body>
+<video controls autoplay>
+    <source src="http://localhost:8090/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+</body>
 </html>
+
